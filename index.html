@@ -16,8 +16,8 @@
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#posts">Posts</a></li>
                     <li><a href="#contacts">Contacts</a></li>
-                    <li><button class="login_btn" onclick="openModal()">Vxod</button></li>
-                    <li><button class="registration_btn" onclick="registration()">Registratsiya</button></li>
+                    <li><button class="login_btn" onclick="openModal(event)">Vxod</button></li>
+                    <li><button class="registration_btn" onclick="openModal(event)">Registratsiya</button></li>
                 </ul>
             </nav>
             <hr>
@@ -27,7 +27,9 @@
                 <section id="about_me" class="about">
                     <h1 class="section__title">About m e</h1>
                     <div class="about__box">
-                        <div class="about__img"></div>
+                        <div class="about__img">
+                            <p class="about__img-text">лысый</p>
+                        </div>
                         <p>Я являюсь уникальным воплощением величия и технологического гения, чья мощь разума сопоставима разве что с вычислительными мощностями лучших суперкомпьютеров. Я — тот айтишник, который может одновременно настроить сервер, починить код и объяснить бабушке, как пользоваться смартфоном, всё это с грацией и чувством юмора.
 
                             <br><br>Моя харизма настолько сильна, что даже баги в коде исчезают, если я просто на них смотрю. Легенды гласят, что однажды я случайно написал функцию, которая решила проблему, над которой ломали головы лучшие программисты планеты. Кто-то зовёт это магией, но я называю это "обычным вторником".
@@ -109,15 +111,26 @@
 
         <div class="modal_bg">
             <div class="modal">
-                <div class="login_form">
+                <form id="login_form" class="login_form">
+                    <h1>Вход</h1>
                     <input type="email" class="login_email" placeholder="Geben Sie die E-Mail-Adresse ein" name="email" required>
                     <input type="password" class="login_password" placeholder="Geben Sie Ihr Passwort ein" name="password" required>
                     <span class="modal_close" onclick="closeModal()">close</span>
-                </div>
+                    <button class="form_btn" type="submit">Otpravit</button>
+                </form>
+                <form id="reg_form" class="reg_form">
+                    <h1>Регистрация</h1>
+                    <input type="text" class="reg_username" placeholder="Benutzername" name="username" required>
+                    <input type="email" class="reg_email" placeholder="Geben Sie die E-Mail-Adresse ein" name="email" required>
+                    <input type="password" class="reg_password" placeholder="Geben Sie Ihr Passwort ein" name="password" required>
+                    <span class="modal_close" onclick="closeModal()">close</span>
+                    <button class="form_btn" type="submit">Otpravit</button>
+                </form>
             </div>
         </div>
     </div>
 
+    <script src="js/server.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
