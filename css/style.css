@@ -21,14 +21,15 @@ nav ul {
 }
 .section__title {
     text-align: center;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 .about__box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
 }
-.portfolio__container {
+.portfolio__container,
+.posts_container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -43,8 +44,8 @@ nav ul {
 .portfolio {
     margin: 1rem 0;
 }
-.portfolio__box {
-    transition: all .3s ease;
+.portfolio__box,
+.posts_box {
     height: 200px;
     display: flex;
     align-items: center;
