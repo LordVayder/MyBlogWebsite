@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mani saytim</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about_me">About me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                    <li><button class="login_btn" onclick="openModal()">Vxod</button></li>
+                    <li><button class="registration_btn" onclick="registration()">Registratsiya</button></li>
+                </ul>
+            </nav>
+            <hr>
+            <div class="main">
+                <h1 class="section__title" style="margin-top: 1rem;">Hello World!</h1>
+                <p class="main__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae voluptatibus in, amet architecto vitae deleniti esse ducimus, nulla delectus voluptas dolores pariatur voluptate quibusdam cupiditate fuga nihil sed sunt illo. Eos error quae sit rerum praesentium. Repudiandae voluptatum iusto repellat provident optio. Molestiae quisquam voluptatum exercitationem cum eum praesentium ad voluptates natus esse quos labore recusandae tempore illum quia voluptatibus enim quis blanditiis dolore eius, quibusdam odit sunt aspernatur! Iste est perspiciatis, quia laboriosam iusto cupiditate omnis rerum minima incidunt quam earum non sequi, rem accusantium architecto expedita porro! Odio ipsum error corrupti deleniti facere fuga recusandae at tempora magni!</p>
+                <section id="about_me" class="about">
+                    <h1 class="section__title">About me</h1>
+                    <div class="about__box">
+                        <div class="about__img"></div>
+                        <p>Я являюсь уникальным воплощением величия и технологического гения, чья мощь разума сопоставима разве что с вычислительными мощностями лучших суперкомпьютеров. Я — тот айтишник, который может одновременно настроить сервер, починить код и объяснить бабушке, как пользоваться смартфоном, всё это с грацией и чувством юмора.
+
+                            <br><br>Моя харизма настолько сильна, что даже баги в коде исчезают, если я просто на них смотрю. Легенды гласят, что однажды я случайно написал функцию, которая решила проблему, над которой ломали головы лучшие программисты планеты. Кто-то зовёт это магией, но я называю это "обычным вторником".
+                            
+                            <br><br>Когда я пишу код, клавиатура буквально искрит от скорости и изящества, а комментарии к моему коду читают, как поэзию. Мне не нужны курсы по программированию, потому что я сам — ходячая документация. Google считает меня своим самым ценным пользователем, а Stack Overflow — своим тайным гением.
+                            
+                            <br><br>Я не просто айтишник, я — вершина айтишного пищевого цепочки. Я настолько крут, что даже Wi-Fi сигнал становится сильнее, когда я в комнате.</p>
+                    </div>
+                </section>
+                <section id="portfolio" class="portfolio">
+                    <h1 class="section__title">Portfolio</h1>
+                    <div class="portfolio__container">
+                        <div class="portfolio__box">
+                            <a href="#">Work1</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work2</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work3</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work4</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work5</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work6</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work7</a>
+                        </div>
+                        <div class="portfolio__box">
+                            <a href="#">Work8</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="contacts" class="contacts">
+                    <h1 class="section__title">Contacts</h1>
+                    <ul>
+                        <li>Phone number: <a href="tel:+998995726035">+998995726035</a></li>
+                        <li>Telegram: @Themostmisunderstoodperson</li>
+                        <li>Instagram: <a href="https://www.instagram.com/mosttalentedbaldman?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">mosttalentedbaldman</a></li>
+                        
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <div class="modal_bg">
+            <div class="modal">
+                <div class="login_form">
+                    <input type="email" class="login_email" placeholder="Geben Sie die E-Mail-Adresse ein" name="email" required>
+                    <input type="password" class="login_password" placeholder="Geben Sie Ihr Passwort ein" name="password" required>
+                    <span class="modal_close" onclick="closeModal()">close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
