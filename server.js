@@ -25,7 +25,14 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('process.env.MONGO_URI')
+mongoose.connect('process.env.MONGO_URI', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch(err => {
+  console.error('MongoDB connection error:', err);
+})
 
 // Function to send email
 const sendEmail = (to, subject, text) => {
@@ -75,7 +82,7 @@ app.post('/register', async (req, res) => {
 
     // Generate a unique email verification token
     const verificationToken = crypto.randomBytes(32).toString('hex');
-    const verificationUrl = `http://localhost:3000/verify-email?token=${verificationToken}`;
+    const verificationUrl = `http://localhost:${PORT}/verify-email?token=${verificationToken}`;
 
     // Send a verification email
     sendEmail(regEmail, 'Email Verification', `Please verify your email by clicking the following link: ${verificationUrl}`);
