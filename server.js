@@ -8,7 +8,8 @@ const crypto = require('crypto');  // For generating a unique verification token
 const User = require('./js/User');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
 // Set up Nodemailer transporter
 const transporter = nodemailer.createTransport({
