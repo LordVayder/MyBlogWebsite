@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');  // For generating a unique verification token
-const User = require('./User');
+const User = require('./js/User');
 
 const app = express();
 const PORT = 3000;
