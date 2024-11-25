@@ -2,9 +2,6 @@ const modalBg = document.querySelector('.modal_bg')
 const loginForm = document.querySelector('.login_form')
 const registrationForm = document.querySelector('.reg_form')
 const body = document.body
-const regUsername = document.querySelector('.reg_username').value
-const regEmail = document.querySelector('.reg_email').value
-const regPassword = document.querySelector('.reg_password').value
 let isModalOpen = false
 
 function openModal(event) {
@@ -33,17 +30,21 @@ function closeModal() {
 
 document.addEventListener('click', (el) => {
     const clickedObjectClass = el.target.className
-    if (clickedObjectClass !== 'modal' && clickedObjectClass === 'modal_bg') {
-        closeModal()
+    if (el.target.classList.contains('modal_bg')) {
+        closeModal();
     }
 })
 
 registrationForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    fetch('/register', {
+    const regUsername = document.querySelector('.reg_username').value
+    const regEmail = document.querySelector('.reg_email').value
+    const regPassword = document.querySelector('.reg_password').value
+
+    fetch('http://localhost:3000/register', {
         method: 'POST',
-        headers: {'Content-type': 'application-json'},
+        headers: {'Content-type': 'application/json'},
         body: JSON.stringify({regUsername, regEmail, regPassword})
     })
     .then(response => response.json())
