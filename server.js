@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
@@ -15,8 +16,8 @@ app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 const transporter = nodemailer.createTransport({
   service: 'gmail',  // You can change this to another email provider if needed
   auth: {
-    user: 'your-email@gmail.com', // Your email address
-    pass: 'your-email-password', // Your email password or App Password
+    user: process.env.EMAIL_USER, // Your email address
+    pass: process.env.EMAIL_PASS, // Your email password or App Password
   },
 });
 
@@ -25,7 +26,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mydatabase')
+mongoose.connect('process.env.MONGO_URI')
 
 // Function to send email
 const sendEmail = (to, subject, text) => {
@@ -150,3 +151,5 @@ app.post('/send-post', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+console.log('MONGO_URI:', process.env.MONGO_URI);
+console.log('EMAIL_USER:', process.env.EMAIL_USER);
