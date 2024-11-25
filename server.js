@@ -10,7 +10,6 @@ const User = require('./js/User');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
 // Set up Nodemailer transporter
 const transporter = nodemailer.createTransport({
@@ -151,5 +150,3 @@ app.post('/send-post', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-console.log('MONGO_URI:', process.env.MONGO_URI);
-console.log('EMAIL_USER:', process.env.EMAIL_USER);
